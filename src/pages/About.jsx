@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+﻿import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Code2, Briefcase, GraduationCap, Globe } from "lucide-react";
 import { ScrollAnimation } from "@/components/ScrollAnimation";
@@ -13,7 +13,7 @@ const About = () => {
     },
     {
       icon: <Briefcase className="w-6 h-6" />,
-      title: "Freelance + Internship",
+      title: "Freelance + Client Work",
       description: "Hands-on industry delivery experience",
     },
     {
@@ -79,7 +79,7 @@ const About = () => {
                 {[
                   "Based in Delhi, India",
                   "Diploma in AI & ML (Expected June 2026)",
-                  "Open to Full-Time / Internship Roles",
+                  "Open to Full-Time Roles Roles",
                 ].map((fact) => (
                   <motion.li
                     key={fact}

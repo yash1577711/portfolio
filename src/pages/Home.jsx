@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+﻿import { motion } from "framer-motion";
 import { Github, Linkedin, MessageCircle, FileDown, User, Briefcase, Server } from "lucide-react";
 import { Link } from "react-router-dom";
 import cvPdf from "@/assets/files/cv_pdf/Yash_Kumar_Resume_Final.pdf";
@@ -16,12 +16,12 @@ const Home = () => {
     {
       icon: <Briefcase className="w-5 h-5 sm:w-6 sm:h-6" aria-hidden="true" />,
       title: "Experience",
-      value: "Freelance + Internship",
+      value: "Freelance + Client Work",
     },
     {
       icon: <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6" aria-hidden="true" />,
       title: "Availability",
-      value: "Full-Time / Internship",
+      value: "Full-Time Roles",
     },
   ];
 
@@ -62,7 +62,7 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          Open to full-time and internship roles | Delhi, India
+          Open to full-time developer roles | Delhi, India
         </motion.p>
 
         <motion.div
@@ -129,7 +129,7 @@ const Home = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
         >
           <a
-            href="https://github.com/Yash-Kumar"
+            href="https://github.com/yash1577711/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col items-center group w-full"
@@ -142,7 +142,7 @@ const Home = () => {
           </a>
 
           <a
-            href="https://linkedin.com/in/Yash-Kumar"
+            href="https://www.linkedin.com/in/yash-kumar-398267279/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col items-center group w-full"

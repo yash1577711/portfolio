@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect } from "react";
+﻿import { Suspense, lazy, useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Background3D from "./components/Background3D";
 import Navbar from "./components/Navbar";
@@ -39,7 +39,7 @@ const pageMeta = {
   "/experience": {
     title: "Experience - Yash Kumar",
     description:
-      "Professional experience of Yash Kumar across freelance full-stack delivery and internship work with Django and MERN.",
+      "Professional experience of Yash Kumar across freelance full-stack delivery and backend-focused web development work.",
   },
   "/education": {
     title: "Education - Yash Kumar",
@@ -54,7 +54,7 @@ const pageMeta = {
   "/contact": {
     title: "Contact - Yash Kumar | Full-Stack Developer",
     description:
-      "Get in touch with Yash Kumar for full-time or internship opportunities in backend and full-stack web development.",
+      "Get in touch with Yash Kumar for full-time backend and full-stack web development opportunities.",
   },
 };
 

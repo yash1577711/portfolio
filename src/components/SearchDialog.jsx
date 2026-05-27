@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+﻿import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Search, Command, ArrowRight } from 'lucide-react'
 
@@ -25,7 +25,7 @@ const searchData = [
     title: 'Experience',
     description: 'Check out my professional experience',
     path: '/experience',
-    keywords: ['experience', 'freelance', 'internship', 'camplaby', 'brainybeam', 'django', 'mern'],
+    keywords: ['experience', 'freelance', 'camplaby', 'brainybeam', 'django', 'mern', 'backend'],
   },
   {
     title: 'Skills',

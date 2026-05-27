@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import { Code2, Github, Linkedin, Mail, Phone } from 'lucide-react'
 
 const Footer = () => {
@@ -104,7 +104,7 @@ const Footer = () => {
             <h3 className="text-sm font-semibold text-white">Social</h3>
             <div className="flex space-x-4">
               <a
-                href="https://github.com/Yash-Kumar"
+                href="https://github.com/yash1577711/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -113,7 +113,7 @@ const Footer = () => {
                 <Github className="w-5 h-5" aria-hidden="true" />
               </a>
               <a
-                href="https://linkedin.com/in/Yash-Kumar"
+                href="https://www.linkedin.com/in/yash-kumar-398267279/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -135,7 +135,7 @@ const Footer = () => {
         <div className="border-t border-white/10 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-gray-400">
-              � {currentYear} Yash Kumar. All rights reserved.
+              © {currentYear} Yash Kumar. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <span className="text-sm text-gray-400 flex items-center gap-2">

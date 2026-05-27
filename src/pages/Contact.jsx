@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin, Github, Linkedin, MessageCircle, Clock, Send, MessageSquare } from 'lucide-react'
 import { useState } from 'react'
 
@@ -40,8 +40,8 @@ const Contact = () => {
   ]
 
   const socialLinks = [
-    { icon: <Github className="w-5 h-5" />, label: 'GitHub', link: 'https://github.com/Yash-Kumar' },
-    { icon: <Linkedin className="w-5 h-5" />, label: 'LinkedIn', link: 'https://linkedin.com/in/Yash-Kumar' },
+    { icon: <Github className="w-5 h-5" />, label: 'GitHub', link: 'https://github.com/yash1577711/' },
+    { icon: <Linkedin className="w-5 h-5" />, label: 'LinkedIn', link: 'https://www.linkedin.com/in/yash-kumar-398267279/' },
     { icon: <MessageCircle className="w-5 h-5" />, label: 'WhatsApp', link: 'https://wa.me/919971758962' },
   ]
 
@@ -133,7 +133,7 @@ const Contact = () => {
               <h3 className="text-lg sm:text-xl font-semibold mb-4">Current Focus</h3>
               <div className="space-y-2 text-gray-400 text-sm sm:text-base">
                 <p>Open to Full-Time Backend Developer roles.</p>
-                <p>Open to Full-Stack Internship opportunities.</p>
+                <p>Open to full-time full-stack development opportunities.</p>
                 <p>Preferred stack: Python, Django, PostgreSQL.</p>
               </div>
             </motion.div>
