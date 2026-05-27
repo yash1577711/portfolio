@@ -1,36 +1,18 @@
 import {
   Code2,
-  Layout,
   Server,
   Database,
-  MessageSquare,
   Brain,
-  Cloud,
-  Terminal,
   Wrench,
-  Users,
+  ShieldCheck,
+  Globe,
 } from "lucide-react";
 import { ScrollAnimation } from "@/components/ScrollAnimation";
 import {
   JavaScriptLogo,
-  ReactLogo,
-  TypeScriptLogo,
-  NodeLogo,
-  MongoDBLogo,
-  VSCodeLogo,
-  GitLogo,
-  TailwindLogo,
-  NextjsLogo,
-  VercelLogo,
   PythonLogo,
-  ReduxLogo,
-  ExpressLogo,
-  BcryptLogo,
-  JWTLogo,
-  AWSLogo,
-  RenderLogo,
-  PostmanLogo,
-  BashLogo,
+  GitLogo,
+  VSCodeLogo,
   WindowsLogo,
   UbuntuLogo,
   LinuxLogo,
@@ -41,77 +23,50 @@ const skills = [
     category: "Programming Languages",
     icon: <Code2 className="w-6 h-6" />,
     items: [
-      { name: "JavaScript", icon: <JavaScriptLogo /> },
-      { name: "TypeScript", icon: <TypeScriptLogo /> },
       { name: "Python", icon: <PythonLogo /> },
-      { name: "Bash", icon: <BashLogo /> },
+      { name: "JavaScript (ES6+)", icon: <JavaScriptLogo /> },
+      { name: "C", icon: <Code2 className="w-4 h-4" /> },
+      { name: "R", icon: <Brain className="w-4 h-4" /> },
+      { name: "HTML5", icon: <Globe className="w-4 h-4" /> },
+      { name: "CSS3", icon: <Globe className="w-4 h-4" /> },
     ],
   },
   {
-    category: "Front-End Development",
-    icon: <Layout className="w-6 h-6" />,
-    items: [
-      { name: "React.js", icon: <ReactLogo /> },
-      { name: "Next.js", icon: <NextjsLogo /> },
-      { name: "Tailwind", icon: <TailwindLogo /> },
-      { name: "Redux", icon: <ReduxLogo /> },
-    ],
-  },
-  {
-    category: "Back-End Development",
+    category: "Frameworks and Tools",
     icon: <Server className="w-6 h-6" />,
     items: [
-      { name: "Node.js", icon: <NodeLogo /> },
-      { name: "Express", icon: <ExpressLogo /> },
-      { name: "JWT", icon: <JWTLogo /> },
-      { name: "Bcrypt", icon: <BcryptLogo /> },
-    ],
-  },
-  {
-    category: "Databases & Cloud Storage",
-    icon: <Database className="w-6 h-6" />,
-    items: [
-      { name: "MongoDB", icon: <MongoDBLogo /> },
-      { name: "Cloudinary", icon: <Cloud className="w-4 h-4" /> },
-      { name: "AWS", icon: <AWSLogo /> },
-    ],
-  },
-  {
-    category: "Version Control & DevOps",
-    icon: <GitLogo />,
-    items: [
+      { name: "Django", icon: <Server className="w-4 h-4" /> },
+      { name: "Bootstrap", icon: <Globe className="w-4 h-4" /> },
+      { name: "Webflow", icon: <Globe className="w-4 h-4" /> },
+      { name: "REST APIs", icon: <ShieldCheck className="w-4 h-4" /> },
       { name: "Git", icon: <GitLogo /> },
       { name: "GitHub", icon: <GitLogo /> },
-      { name: "Vercel", icon: <VercelLogo /> },
-      { name: "Render", icon: <RenderLogo /> },
-    ],
-  },
-  {
-    category: "Tools & Platforms",
-    icon: <Wrench className="w-6 h-6" />,
-    items: [
       { name: "VS Code", icon: <VSCodeLogo /> },
-      { name: "Git Desktop", icon: <GitLogo /> },
-      { name: "Compass", icon: <MongoDBLogo /> },
-      { name: "Postman", icon: <PostmanLogo /> },
+      { name: "Linux CLI", icon: <Wrench className="w-4 h-4" /> },
     ],
   },
   {
-    category: "Operating Systems",
-    icon: <Terminal className="w-6 h-6" />,
+    category: "Databases and Operating Systems",
+    icon: <Database className="w-6 h-6" />,
     items: [
+      { name: "PostgreSQL", icon: <Database className="w-4 h-4" /> },
+      { name: "MySQL", icon: <Database className="w-4 h-4" /> },
+      { name: "SQLite", icon: <Database className="w-4 h-4" /> },
       { name: "Windows", icon: <WindowsLogo className="w-4 h-4" /> },
       { name: "Ubuntu", icon: <UbuntuLogo className="w-4 h-4" /> },
       { name: "Linux", icon: <LinuxLogo className="w-4 h-4" /> },
     ],
   },
   {
-    category: "Soft Skills",
+    category: "Core Concepts",
     icon: <Brain className="w-6 h-6" />,
     items: [
-      { name: "Teamwork", icon: <Users className="w-4 h-4" /> },
-      { name: "Communication", icon: <MessageSquare className="w-4 h-4" /> },
-      { name: "Debugging", icon: <Wrench className="w-4 h-4" /> },
+      { name: "Full-Stack Development", icon: <Code2 className="w-4 h-4" /> },
+      { name: "ORM", icon: <Database className="w-4 h-4" /> },
+      { name: "Auth Systems", icon: <ShieldCheck className="w-4 h-4" /> },
+      { name: "Responsive Design", icon: <Globe className="w-4 h-4" /> },
+      { name: "MVC Architecture", icon: <Server className="w-4 h-4" /> },
+      { name: "ML Fundamentals", icon: <Brain className="w-4 h-4" /> },
     ],
   },
 ];
@@ -127,12 +82,12 @@ const Skills = () => {
 
       <ScrollAnimation>
         <p className="text-gray-400 mb-12 max-w-2xl">
-          A comprehensive overview of my technical expertise and tools I work
-          with
+          Resume-based overview of my backend, full-stack, tooling, and system
+          fundamentals.
         </p>
       </ScrollAnimation>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-2 gap-8">
         {skills.map((skillGroup) => (
           <ScrollAnimation key={skillGroup.category}>
             <div className="bg-gray-800/50 p-6 rounded-lg backdrop-blur-sm hover:bg-gray-800/70 transition-all border border-white/5">
@@ -151,7 +106,7 @@ const Skills = () => {
                     <div className="text-gray-400 group-hover:text-white transition-colors">
                       {skill.icon}
                     </div>
-                    <span className="text-gray-400 group-hover:text-white transition-colors text-sm">
+                    <span className="text-gray-400 group-hover:text-white transition-colors text-sm text-center">
                       {skill.name}
                     </span>
                   </div>

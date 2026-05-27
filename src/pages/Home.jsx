@@ -1,63 +1,29 @@
-import { VercelLogo } from "@/components/TechLogos";
 import { motion } from "framer-motion";
-import {
-  Github,
-  Linkedin,
-  MessageCircle,
-  Copy,
-  Check,
-  FileDown,
-  User,
-} from "lucide-react";
+import { Github, Linkedin, MessageCircle, FileDown, User, Briefcase, Server } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import useSWR from "swr";
-import cvPdf from "@/assets/files/cv_pdf/Niladri_Chatterjee(CV).pdf";
-
-const fetcher = (url) => fetch(url).then((res) => res.json());
+import cvPdf from "@/assets/files/cv_pdf/Yash_Kumar_Resume_Final.pdf";
 
 const Home = () => {
-  const [copied, setCopied] = useState(false);
-  const email = "code.niladri@gmail.com";
-  const whatsappNumber = "+916296554939";
+  const email = "yk1577711@gmail.com";
+  const whatsappNumber = "919971758962";
 
-  const { data: githubData } = useSWR(
-    "https://api.github.com/users/niladri-1",
-    fetcher,
+  const highlights = [
     {
-      revalidateOnFocus: false,
-      dedupingInterval: 60000,
-      shouldRetryOnError: true,
-      errorRetryCount: 3,
+      icon: <Server className="w-5 h-5 sm:w-6 sm:h-6" aria-hidden="true" />,
+      title: "Backend Focus",
+      value: "Python, Django, SQL",
     },
-  );
-
-  function formatRepoCount(count) {
-    if (count < 5) return count.toString();
-    return `${Math.floor(count / 5) * 5}+`;
-  }
-
-  const githubRepos = githubData?.public_repos || 0;
-  const displayRepos = formatRepoCount(githubRepos);
-
-  const copyToClipboard = async () => {
-    try {
-      await navigator.clipboard.writeText(email);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error("Failed to copy:", err);
-    }
-  };
-
-  const handleEmailClick = (e) => {
-    if (window.innerWidth <= 640) {
-      window.location.href = `mailto:${email}`;
-      e.preventDefault();
-    } else {
-      copyToClipboard();
-    }
-  };
+    {
+      icon: <Briefcase className="w-5 h-5 sm:w-6 sm:h-6" aria-hidden="true" />,
+      title: "Experience",
+      value: "Freelance + Internship",
+    },
+    {
+      icon: <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6" aria-hidden="true" />,
+      title: "Availability",
+      value: "Full-Time / Internship",
+    },
+  ];
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 mt-7 sm:mt-0 md:mt-3 lg:mt-5">
@@ -68,25 +34,35 @@ const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Niladri Chatterjee
+          Yash Kumar
         </motion.h1>
-        <motion.h1
+        <motion.h2
           className="text-2xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6 relative tracking-tighter"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          I design & code for web
-        </motion.h1>
+          Full-Stack & Backend Developer
+        </motion.h2>
 
         <motion.p
-          className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-4 sm:mb-5 max-w-2xl mx-auto px-2 sm:px-4"
+          className="text-lg sm:text-xl md:text-2xl text-gray-400 mb-4 sm:mb-5 max-w-3xl mx-auto px-2 sm:px-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Software Developer specializing in Full Stack Development with
-          expertise in React.js, Node.js and modern Web Technologies.
+          Backend Developer and AI/ML diploma student with hands-on experience
+          building full-stack applications using Python, Django, and
+          PostgreSQL.
+        </motion.p>
+
+        <motion.p
+          className="text-sm sm:text-base text-gray-500 mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          Open to full-time and internship roles | Delhi, India
         </motion.p>
 
         <motion.div
@@ -103,7 +79,7 @@ const Home = () => {
               className="px-4 sm:px-6 py-2.5 sm:py-3 bg-white text-black rounded-full text-sm sm:text-base font-medium hover:bg-gray-100 transition-colors flex items-center gap-2"
             >
               <FileDown className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
-              Download CV
+              Download Resume
             </a>
             <Link
               to="/about"
@@ -114,114 +90,82 @@ const Home = () => {
             </Link>
           </div>
 
-          <button
-            onClick={handleEmailClick}
-            className="group relative flex items-center gap-2 py-2 pl-8 pr-4 hover:bg-transparent transition-all cursor-copy sm:cursor-pointer"
+          <a
+            href={`mailto:${email}`}
+            className="text-gray-400 hover:text-white transition-colors text-sm sm:text-base"
             aria-label={`Email: ${email}`}
           >
-            <div className="absolute left-0 flex items-center">
-              <div className="w-3 text-gray-500 group-hover:text-white transition-colors">
-                <VercelLogo />
-              </div>
-              <span className="text-lg font-mono text-gray-400 ml-3 group-hover:text-white transition-colors">
-                ~
-              </span>
-            </div>
-            <span className="text-gray-400 group-hover:text-white transition-colors ml-4 sm:text-base">
-              {email}
-            </span>
-            <div className="opacity-0 group-hover:opacity-100 transition-opacity ml-1 hidden sm:block">
-              {copied ? (
-                <Check className="w-4 h-4 text-green-500" aria-hidden="true" />
-              ) : (
-                <Copy
-                  className="w-4 h-4 text-gray-400 hover:text-white transition-colors"
-                  aria-hidden="true"
-                />
-              )}
-            </div>
-          </button>
+            {email}
+          </a>
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-3 justify-items-center gap-6 mt-8 sm:mt-12 max-w-xs sm:max-w-none mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8 sm:mt-12 max-w-3xl mx-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <motion.a
-            href="https://github.com/niladri-1"
+          {highlights.map((item) => (
+            <motion.div
+              key={item.title}
+              className="bg-white/5 border border-white/10 rounded-xl p-4"
+              whileHover={{ y: -2 }}
+            >
+              <div className="flex items-center justify-center mb-2 text-gray-300">
+                {item.icon}
+              </div>
+              <p className="text-sm text-gray-400">{item.title}</p>
+              <p className="text-sm sm:text-base font-semibold text-white mt-1">
+                {item.value}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        <motion.div
+          className="grid grid-cols-3 justify-items-center gap-6 mt-8 sm:mt-10 max-w-xs sm:max-w-none mx-auto"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+        >
+          <a
+            href="https://github.com/Yash-Kumar"
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col items-center group w-full"
-            whileHover={{ y: -2 }}
             aria-label="Visit GitHub profile"
           >
             <div className="p-3 rounded-xl transition-colors mb-2 w-full max-w-[200px]">
               <Github className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400 group-hover:text-white transition-colors mx-auto" />
             </div>
-            <motion.div
-              className="flex flex-col items-center"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8 }}
-            >
-              <span className="text-base sm:text-lg font-semibold">
-                {displayRepos}
-              </span>
-              <span className="text-xs sm:text-sm text-gray-400">
-                GitHub Projects
-              </span>
-            </motion.div>
-          </motion.a>
+            <span className="text-xs sm:text-sm text-gray-400">GitHub</span>
+          </a>
 
-          <motion.a
-            href="https://linkedin.com/in/niladri1"
+          <a
+            href="https://linkedin.com/in/Yash-Kumar"
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col items-center group w-full"
-            whileHover={{ y: -2 }}
             aria-label="Visit LinkedIn profile"
           >
             <div className="p-3 rounded-xl transition-colors mb-2 w-full max-w-[200px]">
               <Linkedin className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400 group-hover:text-white transition-colors mx-auto" />
             </div>
-            <motion.div
-              className="flex flex-col items-center"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8 }}
-            >
-              <span className="text-base sm:text-lg font-semibold">4000+</span>
-              <span className="text-xs sm:text-sm text-gray-400">
-                LinkedIn Followers
-              </span>
-            </motion.div>
-          </motion.a>
+            <span className="text-xs sm:text-sm text-gray-400">LinkedIn</span>
+          </a>
 
-          <motion.a
+          <a
             href={`https://wa.me/${whatsappNumber}`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col items-center group w-full"
-            whileHover={{ y: -2 }}
             aria-label="Contact via WhatsApp"
           >
             <div className="p-3 rounded-xl transition-colors mb-2 w-full max-w-[200px]">
               <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400 group-hover:text-white transition-colors mx-auto" />
             </div>
-            <motion.div
-              className="flex flex-col items-center"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.8 }}
-            >
-              <span className="text-base sm:text-lg font-semibold">24x7</span>
-              <span className="text-xs sm:text-sm text-gray-400">
-                WhatsApp Me
-              </span>
-            </motion.div>
-          </motion.a>
+            <span className="text-xs sm:text-sm text-gray-400">WhatsApp</span>
+          </a>
         </motion.div>
       </div>
     </div>

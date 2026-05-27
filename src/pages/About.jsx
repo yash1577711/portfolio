@@ -2,35 +2,34 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Code2, Briefcase, GraduationCap, Globe } from "lucide-react";
 import { ScrollAnimation } from "@/components/ScrollAnimation";
-import profileImg from "@/assets/profile/profile.jpg";
-import cvPdf from "@/assets/files/cv_pdf/Niladri_Chatterjee(CV).pdf";
+import cvPdf from "@/assets/files/cv_pdf/Yash_Kumar_Resume_Final.pdf";
 
 const About = () => {
   const achievements = [
     {
       icon: <Code2 className="w-6 h-6" />,
-      title: "10+ Projects",
-      description: "Completed full-stack web applications",
+      title: "2 Core Projects",
+      description: "Production-focused Django full-stack builds",
     },
     {
       icon: <Briefcase className="w-6 h-6" />,
-      title: "3+ Internships",
-      description: "Professional work experience",
+      title: "Freelance + Internship",
+      description: "Hands-on industry delivery experience",
     },
     {
       icon: <GraduationCap className="w-6 h-6" />,
-      title: "8.48 CGPA",
-      description: "Academic excellence",
+      title: "Hackathon Winner",
+      description: "DSEU '26 - 1st Place",
     },
   ];
 
   const interests = [
-    "Web Development",
-    "UI/UX Design",
-    "Cloud Computing",
-    "DevOps",
-    "Open Source",
-    "Artificial Intelligence",
+    "Backend Development",
+    "Django and ORM",
+    "REST API Design",
+    "PostgreSQL Optimization",
+    "Responsive Web Interfaces",
+    "ML Fundamentals",
   ];
 
   return (
@@ -45,8 +44,8 @@ const About = () => {
         <ScrollAnimation>
           <div className="aspect-square overflow-hidden rounded-2xl">
             <img
-              src={profileImg}
-              alt="Niladri Chatterjee"
+              src="/profile-photo.jpg"
+              alt="Yash Kumar"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
             />
           </div>
@@ -55,23 +54,19 @@ const About = () => {
         <ScrollAnimation className="space-y-6">
           <div className="space-y-4">
             <p className="text-gray-300 leading-relaxed">
-              Hi! I'm a passionate full-stack developer with expertise in
-              building modern web applications. My journey in tech started
-              during my college years, where I discovered my love for creating
-              innovative solutions through code.
+              I am a motivated Backend Developer focused on building scalable
+              and production-ready full-stack web applications with Python,
+              Django, and PostgreSQL.
             </p>
             <p className="text-gray-300 leading-relaxed">
-              I completed my B.Tech in Computer Science, maintaining a strong
-              academic record while actively engaging in real-world projects and
-              internships. This blend of theoretical knowledge and practical
-              experience has shaped my approach to problem-solving and software
-              development.
+              My recent work includes independently delivering client projects
+              end-to-end, from requirement gathering and UI implementation to
+              deployment and performance optimization.
             </p>
             <p className="text-gray-300 leading-relaxed">
-              I specialize in React, Node.js, and modern web technologies, with
-              a keen interest in creating performant and user-friendly
-              applications. My experience includes working with various startups
-              and contributing to open-source projects.
+              Along with backend development, I am currently pursuing a Diploma
+              in Artificial Intelligence and Machine Learning and continuously
+              strengthening my engineering fundamentals.
             </p>
           </div>
 
@@ -82,9 +77,9 @@ const About = () => {
               </h3>
               <ul className="list-none space-y-3">
                 {[
-                  "Based in Kolkata, WB, India",
-                  "B.Tech in Computer Science",
-                  "CGPA: 8.48",
+                  "Based in Delhi, India",
+                  "Diploma in AI & ML (Expected June 2026)",
+                  "Open to Full-Time / Internship Roles",
                 ].map((fact) => (
                   <motion.li
                     key={fact}
@@ -106,7 +101,7 @@ const About = () => {
                 rel="noopener noreferrer"
                 className="px-6 py-3 bg-white text-black rounded-full font-medium hover:bg-gray-100 transition-colors"
               >
-                Download CV
+                Download Resume
               </a>
               <Link
                 to="/skills"
@@ -122,7 +117,7 @@ const About = () => {
       <ScrollAnimation>
         <div className="mt-16">
           <h3 className="text-2xl font-semibold mb-8 gradient-text">
-            Achievements
+            Highlights
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
             {achievements.map((achievement) => (

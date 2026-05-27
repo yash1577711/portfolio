@@ -1,72 +1,39 @@
 import { motion } from "framer-motion";
-import { Award, Calendar, ExternalLink } from "lucide-react";
+import { Award, Calendar } from "lucide-react";
 import { ScrollAnimation } from "@/components/ScrollAnimation";
-import typescriptPdf from "@/assets/files/certificates_pdf/TypeScript.pdf";
-import awsEcsPdf from "@/assets/files/certificates_pdf/aws_ecs.pdf";
-import javascriptPdf from "@/assets/files/certificates_pdf/javascript.pdf";
-import dockerPdf from "@/assets/files/certificates_pdf/docker_fundamentals.pdf";
-import pythonPdf from "@/assets/files/certificates_pdf/python.pdf";
-import cybersecurityPdf from "@/assets/files/certificates_pdf/cybersecurity_virtual_program.pdf";
 
 const certificates = [
   {
-    title: "Typescript Programming",
-    issuer: "Geekster",
-    date: "22th April 2025",
-    link: typescriptPdf,
+    title: "Python Advanced Certification",
+    issuer: "Microsoft",
+    date: "Completed",
     description:
-      "Covers TypeScript fundamentals, including syntax, types. Includes practical examples and real-world applications.",
-    skills: [
-      "TypeScript",
-      "JavaScript",
-      "Frontend Development",
-      "Backend Development",
-    ],
+      "Advanced Python concepts and practical development fundamentals.",
+    skills: ["Python", "Problem Solving", "Programming"],
   },
   {
-    title: "AWS ECS Deployment and Management",
-    issuer: "KodeKloud",
-    date: "20th March 2025",
-    link: awsEcsPdf,
+    title: "Generative AI Certification",
+    issuer: "Learning Unlimited",
+    date: "Completed",
     description:
-      "Covers deploying and managing containers on AWS using ECS, including cluster management, load balancing, auto-scaling, and CI/CD integration.",
-    skills: ["AWS ECS", "Cloud Computing", "DevOps", "CI/CD"],
+      "Foundational understanding of generative AI applications and workflows.",
+    skills: ["Generative AI", "AI Concepts", "Practical Use Cases"],
   },
   {
-    title: "JavaScript Programming",
-    issuer: "HackerRank",
-    date: "18th February 2025",
-    link: javascriptPdf,
+    title: "Foundation Course on IR4.0 Technologies",
+    issuer: "Microsoft / Edunet",
+    date: "Completed",
     description:
-      "Validates JavaScript fundamentals, including syntax, functions, and problem-solving.",
-    skills: ["JavaScript", "ES6", "Asynchronous Programming"],
+      "Industry-relevant concepts aligned with Industry 4.0 technologies.",
+    skills: ["IR4.0", "Emerging Tech", "Digital Systems"],
   },
   {
-    title: "Docker Fundamentals",
-    issuer: "KodeKloud",
-    date: "18th February 2025",
-    link: dockerPdf,
+    title: "Hackathon Winner - 1st Place",
+    issuer: "DSEU '26",
+    date: "Achievement",
     description:
-      "Teaches containerization, networking, security, and CI/CD with Docker.",
-    skills: ["Docker", "Containerization", "CI/CD"],
-  },
-  {
-    title: "Python Programming",
-    issuer: "HackerRank",
-    date: "10 Oct 2023",
-    link: pythonPdf,
-    description:
-      "Validates Python basics, including loops, functions, and data structures.",
-    skills: ["Python", "Functions", "Data Structures"],
-  },
-  {
-    title: "Cybersecurity Virtual Program",
-    issuer: "Forage",
-    date: "10 Jul 2023",
-    link: cybersecurityPdf,
-    description:
-      "Focuses on cybersecurity threats, vulnerabilities, and risk mitigation.",
-    skills: ["Cybersecurity", "Threat Mitigation", "Ransomware"],
+      "Won first place through rapid prototyping and problem-solving under time constraints.",
+    skills: ["Rapid Prototyping", "Teamwork", "Execution"],
   },
 ];
 
@@ -81,7 +48,7 @@ const Certificates = () => {
           transition={{ duration: 0.8 }}
         >
           <Award className="w-8 h-8" />
-          <h2 className="text-4xl font-bold gradient-text">Certificates</h2>
+          <h2 className="text-4xl font-bold gradient-text">Certificates and Achievements</h2>
         </motion.div>
       </ScrollAnimation>
 
@@ -103,7 +70,7 @@ const Certificates = () => {
                     <span>{cert.date}</span>
                   </div>
                 </div>
-                <p className="text-gray-300 line-clamp-2">{cert.description}</p>
+                <p className="text-gray-300">{cert.description}</p>
                 <div className="flex flex-wrap gap-2 mt-4">
                   {cert.skills.map((skill) => (
                     <span
@@ -114,16 +81,6 @@ const Certificates = () => {
                     </span>
                   ))}
                 </div>
-                <motion.a
-                  href={cert.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 mt-4 group-hover:translate-x-2 transition-transform"
-                  whileHover={{ scale: 1.05 }}
-                >
-                  View Certificate
-                  <ExternalLink className="w-4 h-4" />
-                </motion.a>
               </div>
             </motion.div>
           </ScrollAnimation>

@@ -1,7 +1,7 @@
 {
-  "name": "Niladri Chatterjee - Full Stack Developer Portfolio",
-  "short_name": "Niladri Chatterjee",
-  "description": "Portfolio of Niladri Chatterjee - Full Stack Developer specializing in MERN stack, React.js, Node.js, Next.js, TypeScript, and modern web technologies.",
+  "name": "Yash Kumar - Full-Stack & Backend Developer Portfolio",
+  "short_name": "Yash Kumar",
+  "description": "Portfolio of Yash Kumar, full-stack and backend developer skilled in Python, Django, SQL, and scalable web development.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
@@ -13,9 +13,7 @@
   "categories": [
     "portfolio",
     "developer",
-    "technology",
-    "education",
-    "business"
+    "technology"
   ],
   "screenshots": [],
   "icons": [
@@ -36,21 +34,21 @@
     {
       "name": "View Projects",
       "short_name": "Projects",
-      "description": "Browse my portfolio projects",
+      "description": "Browse portfolio projects",
       "url": "/projects",
       "icons": [{ "src": "/favicon-192.png", "sizes": "192x192" }]
     },
     {
-      "name": "Contact Me",
+      "name": "Contact",
       "short_name": "Contact",
-      "description": "Get in touch with me",
+      "description": "Get in touch",
       "url": "/contact",
       "icons": [{ "src": "/favicon-192.png", "sizes": "192x192" }]
     },
     {
       "name": "View Skills",
       "short_name": "Skills",
-      "description": "See my technical skills",
+      "description": "See technical skills",
       "url": "/skills",
       "icons": [{ "src": "/favicon-192.png", "sizes": "192x192" }]
     }

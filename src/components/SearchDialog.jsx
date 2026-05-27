@@ -5,51 +5,51 @@ import { Search, Command, ArrowRight } from 'lucide-react'
 const searchData = [
   {
     title: 'Home',
-    description: 'Go to the welcome page',
+    description: 'Go to the portfolio home page',
     path: '/',
-    keywords: ['home', 'cv', 'resume', 'start', 'welcome', 'portfolio', 'niladri', 'niladri chatterjee', 'niladri1', 'software developer', 'full stack developer', 'mern stack', 'web developer'],
+    keywords: ['home', 'resume', 'portfolio', 'yash', 'yash kumar', 'backend developer', 'python', 'django', 'sql'],
   },
   {
     title: 'About',
-    description: 'Learn more about me and my background',
+    description: 'Learn more about my background and objective',
     path: '/about',
-    keywords: ['about', 'background', 'education', 'bio', 'profile', 'cv', 'resume', 'niladri', 'chatterjee', 'full stack developer', 'software engineer', 'web developer'],
+    keywords: ['about', 'career objective', 'profile', 'backend', 'full stack', 'ai ml diploma'],
   },
   {
     title: 'Education',
     description: 'View my educational background',
     path: '/education',
-    keywords: ['education', 'university', 'college', 'degree', 'school', 'board', 'computer science', 'engineering', 'b.tech', 'bengal college'],
+    keywords: ['education', 'dseu', 'diploma', 'artificial intelligence', 'machine learning', 'expected 2026'],
   },
   {
     title: 'Experience',
     description: 'Check out my professional experience',
     path: '/experience',
-    keywords: ['experience', 'work', 'career', 'jobs', 'professional', 'internships', 'certificates', 'mern', 'web developer', 'full stack', 'software developer'],
+    keywords: ['experience', 'freelance', 'internship', 'camplaby', 'brainybeam', 'django', 'mern'],
   },
   {
     title: 'Skills',
     description: 'Explore my technical skills and expertise',
     path: '/skills',
-    keywords: ['skills', 'technologies', 'programming', 'languages', 'frameworks', 'web', 'development', 'software', 'tools', 'react', 'node', 'javascript', 'typescript', 'next.js', 'mongodb', 'sql'],
+    keywords: ['skills', 'python', 'javascript', 'django', 'postgresql', 'mysql', 'git', 'rest api', 'mvc'],
   },
   {
     title: 'Projects',
-    description: 'View my portfolio of projects',
+    description: 'View my portfolio projects',
     path: '/projects',
-    keywords: ['projects', 'portfolio', 'work', 'examples', 'github', 'code', 'open-source', 'web applications', 'full stack', 'mern stack', 'react', 'node'],
+    keywords: ['projects', 'delivery platform', 'blogging platform', 'django', 'bootstrap', 'postgresql', 'orm'],
   },
   {
     title: 'Certificates',
     description: 'View my certifications and achievements',
     path: '/certificates',
-    keywords: ['certificates', 'certifications', 'achievements', 'courses', 'learning', 'skills', 'professional', 'development', 'awards', 'badges'],
+    keywords: ['certificates', 'microsoft', 'python advanced', 'generative ai', 'ir4.0', 'hackathon'],
   },
   {
     title: 'Contact',
     description: 'Get in touch with me',
     path: '/contact',
-    keywords: ['contact', 'email', 'message', 'connect', 'hire', 'freelance', 'work', 'collaboration', 'job', 'opportunity'],
+    keywords: ['contact', 'email', 'phone', 'linkedin', 'github', 'whatsapp', 'hire'],
   },
 ]
 

@@ -5,7 +5,7 @@ import { useState } from 'react'
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' })
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState('idle') // 'idle' | 'success' | 'error'
+  const [submitStatus, setSubmitStatus] = useState('idle')
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -33,16 +33,16 @@ const Contact = () => {
   }
 
   const contactInfo = [
-    { icon: <Mail className="w-5 h-5" />, label: 'Email', value: 'code.niladri@gmail.com', link: 'mailto:code.niladri@gmail.com' },
-    { icon: <Phone className="w-5 h-5" />, label: 'Phone', value: '+916296554939', link: 'tel:+916296554939' },
-    { icon: <MapPin className="w-5 h-5" />, label: 'Location', value: 'Kolkata, West Bengal, India' },
+    { icon: <Mail className="w-5 h-5" />, label: 'Email', value: 'yk1577711@gmail.com', link: 'mailto:yk1577711@gmail.com' },
+    { icon: <Phone className="w-5 h-5" />, label: 'Phone', value: '+91 99717 58962', link: 'tel:+919971758962' },
+    { icon: <MapPin className="w-5 h-5" />, label: 'Location', value: 'Delhi, India' },
     { icon: <Clock className="w-5 h-5" />, label: 'Time Zone', value: 'IST (UTC+5:30)' },
   ]
 
   const socialLinks = [
-    { icon: <Github className="w-5 h-5" />, label: 'GitHub', link: 'https://github.com/niladri-1' },
-    { icon: <Linkedin className="w-5 h-5" />, label: 'LinkedIn', link: 'https://linkedin.com/in/niladri1' },
-    { icon: <MessageCircle className="w-5 h-5" />, label: 'WhatsApp', link: 'https://wa.me/+916296554939' },
+    { icon: <Github className="w-5 h-5" />, label: 'GitHub', link: 'https://github.com/Yash-Kumar' },
+    { icon: <Linkedin className="w-5 h-5" />, label: 'LinkedIn', link: 'https://linkedin.com/in/Yash-Kumar' },
+    { icon: <MessageCircle className="w-5 h-5" />, label: 'WhatsApp', link: 'https://wa.me/919971758962' },
   ]
 
   return (
@@ -59,7 +59,6 @@ const Contact = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-[1fr,1.5fr] gap-8 sm:gap-12">
-          {/* Left Column */}
           <div className="space-y-6 sm:space-y-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -131,16 +130,15 @@ const Contact = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="bg-gray-800/50 p-5 sm:p-6 rounded-xl backdrop-blur-sm"
             >
-              <h3 className="text-lg sm:text-xl font-semibold mb-4">Office Hours</h3>
+              <h3 className="text-lg sm:text-xl font-semibold mb-4">Current Focus</h3>
               <div className="space-y-2 text-gray-400 text-sm sm:text-base">
-                <p>Monday - Friday: 9:00 AM - 6:00 PM (IST)</p>
-                <p>Saturday: 10:00 AM - 2:00 PM (IST)</p>
-                <p>Sunday: Closed</p>
+                <p>Open to Full-Time Backend Developer roles.</p>
+                <p>Open to Full-Stack Internship opportunities.</p>
+                <p>Preferred stack: Python, Django, PostgreSQL.</p>
               </div>
             </motion.div>
           </div>
 
-          {/* Right Column - Form */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -212,7 +210,7 @@ const Contact = () => {
                   animate={{ opacity: 1, y: 0 }}
                   className="text-green-400 text-center text-sm sm:text-base"
                 >
-                  Message sent successfully! I'll get back to you soon.
+                  Message sent successfully! I will get back to you soon.
                 </motion.p>
               )}
 

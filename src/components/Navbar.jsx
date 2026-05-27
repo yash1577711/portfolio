@@ -31,13 +31,11 @@ const Navbar = () => {
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
-            {/* Logo */}
             <Link to="/" className="flex items-center space-x-3">
               <Code2 className="w-8 h-8 text-white" aria-hidden="true" />
-              <span className="text-xl font-bold text-white">Niladri</span>
+              <span className="text-xl font-bold text-white">Yash Kumar</span>
             </Link>
 
-            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-6">
               <SearchDialog />
               {navLinks.map((link) => (
@@ -52,7 +50,6 @@ const Navbar = () => {
               ))}
             </div>
 
-            {/* Mobile header right section */}
             <div className="flex md:hidden items-center space-x-2">
               <SearchDialog />
               <button
@@ -71,7 +68,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
         {isMenuOpen && (
           <motion.div
             className="md:hidden absolute top-full left-0 right-0 bg-black/50 backdrop-blur-xl"

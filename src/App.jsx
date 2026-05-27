@@ -15,59 +15,63 @@ const Certificates = lazy(() => import("./pages/Certificates"));
 const Contact = lazy(() => import("./pages/Contact"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
-// Per-page SEO metadata
 const pageMeta = {
   "/": {
-    title: "Niladri Chatterjee - Full Stack Developer | MERN Stack Expert",
+    title: "Yash Kumar - Full-Stack & Backend Developer | Python, Django, SQL",
     description:
-      "Niladri Chatterjee — Full Stack Developer specializing in MERN stack, React.js, Node.js, Next.js and TypeScript. Based in Kolkata, India.",
+      "Portfolio of Yash Kumar, a full-stack and backend developer in Delhi with hands-on experience building production-grade web applications.",
   },
   "/about": {
-    title: "About - Niladri Chatterjee | Full Stack Developer",
+    title: "About - Yash Kumar",
     description:
-      "Learn about Niladri Chatterjee — B.Tech Computer Science graduate, Full Stack Developer with 3+ internships and 10+ projects. Based in Kolkata, India.",
+      "Learn about Yash Kumar, a Backend Developer focused on Python, Django, PostgreSQL, and production-grade web application delivery.",
   },
   "/projects": {
-    title: "Projects - Niladri Chatterjee | Full Stack Developer Portfolio",
+    title: "Projects - Yash Kumar",
     description:
-      "Explore full-stack web projects built by Niladri Chatterjee using React.js, Node.js, MongoDB, Next.js and TypeScript.",
+      "Explore key full-stack projects built by Yash Kumar using Django, Bootstrap, PostgreSQL, and clean MVC architecture.",
   },
   "/skills": {
-    title: "Skills - Niladri Chatterjee | React, Node.js, MERN Stack",
+    title: "Skills - Yash Kumar",
     description:
-      "Technical skills of Niladri Chatterjee — React.js, Node.js, Express, MongoDB, Next.js, TypeScript, AWS, Docker and more.",
+      "Technical skills of Yash Kumar including Python, Django, SQL, REST APIs, Git, and backend-focused full-stack development.",
   },
   "/experience": {
-    title: "Experience - Niladri Chatterjee | Full Stack Developer",
+    title: "Experience - Yash Kumar",
     description:
-      "Professional experience of Niladri Chatterjee including 3+ internships in full stack web development.",
+      "Professional experience of Yash Kumar across freelance full-stack delivery and internship work with Django and MERN.",
   },
   "/education": {
-    title: "Education - Niladri Chatterjee | B.Tech Computer Science",
+    title: "Education - Yash Kumar",
     description:
-      "Educational background of Niladri Chatterjee — B.Tech in Computer Science with 8.48 CGPA.",
+      "Education background of Yash Kumar, Diploma in Artificial Intelligence and Machine Learning (Expected June 2026).",
   },
   "/certificates": {
-    title: "Certificates - Niladri Chatterjee | Developer Certifications",
+    title: "Certificates - Yash Kumar",
     description:
-      "Professional certifications and achievements of Niladri Chatterjee in web development and cloud technologies.",
+      "Certifications and achievements of Yash Kumar, including Python Advanced, Generative AI, and IR4.0 technologies.",
   },
   "/contact": {
-    title: "Contact - Niladri Chatterjee | Hire a Full Stack Developer",
+    title: "Contact - Yash Kumar | Full-Stack Developer",
     description:
-      "Get in touch with Niladri Chatterjee for freelance projects, job opportunities or collaborations. Based in Kolkata, India.",
+      "Get in touch with Yash Kumar for full-time or internship opportunities in backend and full-stack web development.",
   },
 };
 
-// Hook to update document title + meta description on route change
 function SEOUpdater() {
   const location = useLocation();
 
   useEffect(() => {
+    const configuredSiteUrl = import.meta.env.VITE_SITE_URL
+      ? import.meta.env.VITE_SITE_URL.replace(/\/+$/, "")
+      : "";
+    const origin = configuredSiteUrl || window.location.origin;
+    const absoluteUrl = `${origin}${location.pathname}`;
+
     const meta = pageMeta[location.pathname] || {
-      title: "Niladri Chatterjee - Full Stack Developer",
+      title: "Yash Kumar - Full-Stack & Backend Developer",
       description:
-        "Portfolio of Niladri Chatterjee — Full Stack Developer specializing in MERN stack and modern web technologies.",
+        "Portfolio of Yash Kumar, Backend Developer specializing in Python, Django, SQL, and full-stack web development.",
     };
 
     document.title = meta.title;
@@ -82,18 +86,13 @@ function SEOUpdater() {
     if (ogDesc) ogDesc.setAttribute("content", meta.description);
 
     const ogUrl = document.querySelector('meta[property="og:url"]');
-    if (ogUrl)
-      ogUrl.setAttribute(
-        "content",
-        `https://niladri1.vercel.app${location.pathname}`,
-      );
+    if (ogUrl) ogUrl.setAttribute("content", absoluteUrl);
+
+    const twitterUrl = document.querySelector('meta[name="twitter:url"]');
+    if (twitterUrl) twitterUrl.setAttribute("content", absoluteUrl);
 
     const canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical)
-      canonical.setAttribute(
-        "href",
-        `https://niladri1.vercel.app${location.pathname}`,
-      );
+    if (canonical) canonical.setAttribute("href", absoluteUrl);
   }, [location]);
 
   return null;

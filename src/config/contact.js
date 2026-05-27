@@ -1,21 +1,21 @@
 /**
  * Centralized contact information
- * Update this file to change contact details across the entire portfolio
+ * Update this file to change contact details across the portfolio
  */
 
 export const CONTACT_INFO = {
-  email: 'code.niladri@gmail.com',
-  phone: '+916296554939',
-  whatsapp: '+916296554939',
-  location: 'Kolkata, West Bengal, India',
+  email: 'yk1577711@gmail.com',
+  phone: '+919971758962',
+  whatsapp: '+919971758962',
+  location: 'Delhi, India',
   timezone: 'IST (UTC+5:30)',
-  github: 'https://github.com/niladri-1',
-  linkedin: 'https://linkedin.com/in/niladri1',
-  twitter: '@niladri_dev',
+  github: 'https://github.com/Yash-Kumar',
+  linkedin: 'https://linkedin.com/in/Yash-Kumar',
+  twitter: '',
 }
 
 export const OFFICE_HOURS = {
-  weekday: 'Monday - Friday: 9:00 AM - 6:00 PM (IST)',
-  saturday: 'Saturday: 10:00 AM - 2:00 PM (IST)',
-  sunday: 'Sunday: Closed',
+  weekday: 'Available for full-time and internship discussions (IST).',
+  saturday: 'Open for project and interview coordination.',
+  sunday: 'Available by prior message.',
 }
